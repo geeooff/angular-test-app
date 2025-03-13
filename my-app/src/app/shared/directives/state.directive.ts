@@ -2,7 +2,8 @@ import { Directive, Input, HostBinding, OnChanges } from '@angular/core';
 import { State } from '../enums/state.enum';
 
 @Directive({
-  selector: '[appState]'
+    selector: '[appState]',
+    standalone: false
 })
 export class StateDirective implements OnChanges {
   @Input() appState?: State;

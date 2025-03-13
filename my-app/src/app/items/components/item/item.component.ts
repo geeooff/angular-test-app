@@ -4,9 +4,10 @@ import { State } from '../../../shared/enums/state.enum';
 import { CollectionService } from '../../../core/services/collection.service';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+    selector: 'app-item',
+    templateUrl: './item.component.html',
+    styleUrls: ['./item.component.css'],
+    standalone: false
 })
 export class ItemComponent  {
   @Input() item?: Item;

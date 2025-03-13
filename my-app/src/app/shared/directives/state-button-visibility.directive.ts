@@ -1,7 +1,8 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appStateButtonVisibility]'
+    selector: '[appStateButtonVisibility]',
+    standalone: false
 })
 export class StateButtonVisibilityDirective {
   // @Input() appStateButtonVisibility: State;
