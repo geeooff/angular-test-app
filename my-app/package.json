@@ -43,7 +43,7 @@
     "@angular/language-service": "^18.2.13",
     "@cypress/schematic": "^3.0.0",
     "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.27.0",
+    "@eslint/js": "^9.28.0",
     "@types/jasmine": "~4.6.5",
     "@types/node": "^22.15.29",
     "cypress": "^14.4.0",
