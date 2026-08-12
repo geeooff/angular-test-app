@@ -2,7 +2,7 @@ import { Component, Input, inject } from '@angular/core';
 import { Item } from '../../../shared/interfaces/item';
 import { State } from '../../../shared/enums/state.enum';
 import { CollectionService } from '../../../core/services/collection.service';
-import { NgIf } from '@angular/common';
+
 import { StateDirective } from '../../../shared/directives/state.directive';
 import { RouterLink } from '@angular/router';
 import { SuperPipe } from '../../../shared/pipes/super.pipe';
@@ -11,7 +11,7 @@ import { SuperPipe } from '../../../shared/pipes/super.pipe';
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.css'],
-    imports: [NgIf, StateDirective, RouterLink, SuperPipe]
+    imports: [StateDirective, RouterLink, SuperPipe]
 })
 export class ItemComponent  {
   private collectionService = inject(CollectionService);

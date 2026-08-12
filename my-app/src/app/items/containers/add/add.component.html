@@ -3,7 +3,9 @@
 
     <div class="my-2">
       <input name="name" #nom="ngModel" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Nom et prénom" required minlength="5">
-      <div class="alert alert-danger" *ngIf="nom.touched && nom.invalid">Champ invalide</div>
+      @if (nom.touched && nom.invalid) {
+        <div class="alert alert-danger">Champ invalide</div>
+      }
     </div>
 
     <div class="my-2">
@@ -12,7 +14,9 @@
 
     <div class="my-2">
       <select name="state" #etat="ngModel" [(ngModel)]="newItem.state" class="form-control">
-        <option *ngFor="let intitule of intitules" [ngValue]="intitule">{{ intitule }}</option>
+        @for (intitule of intitules; track intitule) {
+          <option [ngValue]="intitule">{{ intitule }}</option>
+        }
       </select>
     </div>
 
