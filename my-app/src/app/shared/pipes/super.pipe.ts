@@ -1,10 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { State } from '../enums/state.enum';
 
-@Pipe({
-    name: 'super',
-    standalone: false
-})
+@Pipe({ name: 'super' })
 export class SuperPipe implements PipeTransform {
 
   transform(reference: string, state: State): any {

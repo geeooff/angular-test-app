@@ -8,8 +8,8 @@ describe('StateButtonComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [ StateButtonComponent ]
-    })
+    imports: [StateButtonComponent]
+})
     .compileComponents();
   });
 

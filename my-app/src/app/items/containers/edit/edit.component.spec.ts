@@ -15,15 +15,14 @@ describe('EditComponent', () => {
       collection: NEVER
     };
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
-      declarations: [ EditComponent ],
-      providers: [
+    imports: [RouterTestingModule, EditComponent],
+    providers: [
         {
-          provide: CollectionService,
-          useValue: collectionServiceStub
+            provide: CollectionService,
+            useValue: collectionServiceStub
         }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 

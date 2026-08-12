@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CollectionService } from '../../../core/services/collection.service';
 import { Item } from '../../../shared/interfaces/item';
+import { FormComponent } from '../../../shared/components/form/form.component';
 
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html',
     styleUrls: ['./edit.component.css'],
-    standalone: false
+    imports: [FormComponent]
 })
 export class EditComponent implements OnInit {
-  public item?: Item;
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
+  private collectionService = inject(CollectionService);
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private collectionService: CollectionService
-  ) { }
+  public item?: Item;
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(

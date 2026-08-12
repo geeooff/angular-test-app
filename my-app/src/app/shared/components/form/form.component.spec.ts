@@ -14,15 +14,14 @@ describe('FormComponent', () => {
       transform: (value) => value ?? []
     };
     await TestBed.configureTestingModule({
-      imports: [ FormsModule, ReactiveFormsModule ],
-      declarations: [ FormComponent ],
-      providers: [
+    imports: [FormsModule, ReactiveFormsModule, FormComponent],
+    providers: [
         {
-          provide: FilterPipe,
-          useValue: filterPipeStub
+            provide: FilterPipe,
+            useValue: filterPipeStub
         }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 

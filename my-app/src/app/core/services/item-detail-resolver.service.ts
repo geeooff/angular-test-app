@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable, of, pipe } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
@@ -9,11 +9,9 @@ import { CollectionService } from './collection.service';
   providedIn: 'root'
 })
 export class ItemDetailResolverService  {
+  private router = inject(Router);
+  private collectionService = inject(CollectionService);
 
-  constructor(
-    private router: Router,
-    private collectionService: CollectionService
-  ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Item | undefined> {
     const idValue = route.paramMap.get('id');

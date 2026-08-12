@@ -1,10 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Item } from '../interfaces/item';
 
-@Pipe({
-    name: 'filter',
-    standalone: false
-})
+@Pipe({ name: 'filter' })
 export class FilterPipe implements PipeTransform {
 
   transform(coll: Item[] | null, arg: string): Item[] {

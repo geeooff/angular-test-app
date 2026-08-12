@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { ItemDetailResolverService } from '../core/services/item-detail-resolver.service';
 import { ListItemsComponent } from './containers/list-items/list-items.component';
 import { AddComponent } from './containers/add/add.component';
 import { AddItemComponent } from './containers/add-item/add-item.component';
 import { EditComponent } from './containers/edit/edit.component';
 
-const appRoutes: Routes = [
+export const ITEMS_ROUTES: Routes = [
   {
     path: '',
     component: ListItemsComponent
@@ -25,13 +24,3 @@ const appRoutes: Routes = [
     resolve: { item: ItemDetailResolverService }
   }
 ];
-
-@NgModule({
-  imports: [
-    RouterModule.forChild(appRoutes)
-  ],
-  exports: [
-    RouterModule
-  ]
-})
-export class ItemsRoutingModule { }
