@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CollectionService } from '../../../core/services/collection.service';
 import { Item } from '../../../shared/interfaces/item';
 import { Observable } from 'rxjs';
@@ -10,6 +10,7 @@ import { FilterPipe } from '../../../shared/pipes/filter.pipe';
     selector: 'app-list-items',
     templateUrl: './list-items.component.html',
     styleUrls: ['./list-items.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ItemComponent, AsyncPipe, FilterPipe]
 })
 export class ListItemsComponent {

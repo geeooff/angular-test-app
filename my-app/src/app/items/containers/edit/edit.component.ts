@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CollectionService } from '../../../core/services/collection.service';
 import { Item } from '../../../shared/interfaces/item';
@@ -8,6 +8,7 @@ import { FormComponent } from '../../../shared/components/form/form.component';
     selector: 'app-edit',
     templateUrl: './edit.component.html',
     styleUrls: ['./edit.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormComponent]
 })
 export class EditComponent implements OnInit {

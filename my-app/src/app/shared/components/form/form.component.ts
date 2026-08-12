@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, inject, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { State } from '../../../shared/enums/state.enum';
 import { Item } from '../../interfaces/item';
@@ -8,6 +8,7 @@ import { Item } from '../../interfaces/item';
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class FormComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from '../../../shared/interfaces/item';
 import { State } from '../../../shared/enums/state.enum';
 import { CollectionService } from '../../../core/services/collection.service';
@@ -11,6 +11,7 @@ import { SuperPipe } from '../../../shared/pipes/super.pipe';
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [StateDirective, RouterLink, SuperPipe]
 })
 export class ItemComponent  {

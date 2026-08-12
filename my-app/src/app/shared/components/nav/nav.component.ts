@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 
@@ -6,6 +6,7 @@ import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
     selector: 'app-nav',
     templateUrl: './nav.component.html',
     styleUrls: ['./nav.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterLink, NgbCollapse]
 })
 export class NavComponent {

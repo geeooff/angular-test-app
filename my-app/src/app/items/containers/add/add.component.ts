@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CollectionService } from '../../../core/services/collection.service';
 import { State } from '../../../shared/enums/state.enum';
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-add',
     templateUrl: './add.component.html',
     styleUrls: ['./add.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule]
 })
 export class AddComponent {
