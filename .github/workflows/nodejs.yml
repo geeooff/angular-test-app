@@ -12,7 +12,12 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    # "current" tracks whatever Node just shipped, so it can carry upstream
+    # regressions (e.g. https://github.com/actions/runner-images/issues/14173)
+    # that have nothing to do with this repo. Don't let those block the build.
+    continue-on-error: ${{ matrix.node-version == 'current' }}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
