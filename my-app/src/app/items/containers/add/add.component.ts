@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CollectionService } from '../../../core/services/collection.service';
 import { State } from '../../../shared/enums/state.enum';
 import { Item, NewItem } from '../../../shared/interfaces/item';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-add',
     templateUrl: './add.component.html',
     styleUrls: ['./add.component.css'],
-    standalone: false
+    imports: [FormsModule, NgIf, NgFor]
 })
 export class AddComponent {
+  private router = inject(Router);
+  private collectionService = inject(CollectionService);
+
   public intitules = Object.values(State);
   public newItem: NewItem;
-  constructor(
-    private router: Router,
-    private collectionService: CollectionService
-  ) {
+  constructor() {
     this.newItem = this.init();
   }
 

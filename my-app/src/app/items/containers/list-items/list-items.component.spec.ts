@@ -5,10 +5,7 @@ import { CollectionService } from 'src/app/core/services/collection.service';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { ListItemsComponent } from './list-items.component';
 
-@Pipe({
-    name: 'filter',
-    standalone: false
-})
+@Pipe({ name: 'filter' })
 class FilterPipeMock implements PipeTransform {
   transform(value: any): any {
     return value;
@@ -30,21 +27,19 @@ describe('ListItemsComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      declarations: [
-        ListItemsComponent,
-        FilterPipeMock
-      ],
-      providers: [
+    imports: [ListItemsComponent,
+        FilterPipeMock],
+    providers: [
         {
-          provide: CollectionService,
-          useValue: collectionServiceStub
+            provide: CollectionService,
+            useValue: collectionServiceStub
         },
         {
-          provide: FilterPipe,
-          useValue: filterPipeStub
+            provide: FilterPipe,
+            useValue: filterPipeStub
         }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Item, NewItem } from '../../shared/interfaces/item';
 import { Observable } from 'rxjs';
@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CollectionService {
+  private http = inject(HttpClient);
+
   private _collection: Observable<Item[]>;
   private url = 'api/COLLECTION';
-  constructor(
-    private http: HttpClient
-  ) {
+  constructor() {
     this._collection = this.http.get<Item[]>(this.url);
   }
 

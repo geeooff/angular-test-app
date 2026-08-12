@@ -1,22 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Item } from '../../../shared/interfaces/item';
 import { CollectionService } from '../../../core/services/collection.service';
+import { FormComponent } from '../../../shared/components/form/form.component';
 
 @Component({
     selector: 'app-add-item',
     templateUrl: './add-item.component.html',
     styleUrls: ['./add-item.component.css'],
-    standalone: false
+    imports: [FormComponent]
 })
 export class AddItemComponent {
-  public item?: Item;
-  constructor(
-    private router: Router,
-    private collectionService: CollectionService
-  ) {
+  private router = inject(Router);
+  private collectionService = inject(CollectionService);
 
-  }
+  public item?: Item;
 
   public add(item: Item): void {
     const sub = this.collectionService.addItem(item).subscribe(

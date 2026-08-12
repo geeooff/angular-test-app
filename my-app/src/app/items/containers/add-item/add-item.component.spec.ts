@@ -14,14 +14,14 @@ describe('AddItemComponent', () => {
       collection: NEVER
     };
     TestBed.configureTestingModule({
-      declarations: [ AddItemComponent ],
-      providers: [
+    imports: [AddItemComponent],
+    providers: [
         {
-          provide: CollectionService,
-          useValue: collectionServiceStub
+            provide: CollectionService,
+            useValue: collectionServiceStub
         }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 

@@ -1,20 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Item } from '../../../shared/interfaces/item';
 import { State } from '../../../shared/enums/state.enum';
 import { CollectionService } from '../../../core/services/collection.service';
+import { NgIf } from '@angular/common';
+import { StateDirective } from '../../../shared/directives/state.directive';
+import { RouterLink } from '@angular/router';
+import { SuperPipe } from '../../../shared/pipes/super.pipe';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.css'],
-    standalone: false
+    imports: [NgIf, StateDirective, RouterLink, SuperPipe]
 })
 export class ItemComponent  {
+  private collectionService = inject(CollectionService);
+
   @Input() item?: Item;
   public state = State;
-  constructor(
-    private collectionService: CollectionService
-  ) { }
 
   public changeState(newState: State): void {
     if (!this.item) {

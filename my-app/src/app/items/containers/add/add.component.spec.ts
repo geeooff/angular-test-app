@@ -15,17 +15,17 @@ describe('AddComponent', () => {
       collection: NEVER
     };
     await TestBed.configureTestingModule({
-      declarations: [ AddComponent ],
-      imports: [
-        FormsModule
-      ],
-      providers: [
+    imports: [
+        FormsModule,
+        AddComponent
+    ],
+    providers: [
         {
-          provide: CollectionService,
-          useValue: collectionServiceStub
+            provide: CollectionService,
+            useValue: collectionServiceStub
         }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 
