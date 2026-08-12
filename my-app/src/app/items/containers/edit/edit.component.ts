@@ -8,7 +8,7 @@ import { FormComponent } from '../../../shared/components/form/form.component';
     selector: 'app-edit',
     templateUrl: './edit.component.html',
     styleUrls: ['./edit.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [FormComponent]
 })
 export class EditComponent implements OnInit {

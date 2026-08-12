@@ -1,4 +1,3 @@
-import { ValueProvider } from '@angular/core';
 import { TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NEVER } from 'rxjs';

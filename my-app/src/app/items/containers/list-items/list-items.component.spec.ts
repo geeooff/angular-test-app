@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NEVER } from 'rxjs';
-import { CollectionService } from 'src/app/core/services/collection.service';
-import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
+import { CollectionService } from '../../../core/services/collection.service';
+import { FilterPipe } from '../../../shared/pipes/filter.pipe';
 import { ListItemsComponent } from './list-items.component';
 
 @Pipe({ name: 'filter' })
 class FilterPipeMock implements PipeTransform {
-  transform(value: any): any {
+  transform<T>(value: T): T {
     return value;
   }
 }
@@ -23,7 +23,7 @@ describe('ListItemsComponent', () => {
       collection: NEVER
     };
     filterPipeStub = {
-      transform: (value) => value ?? []
+      transform: (coll) => coll ?? []
     };
 
     TestBed.configureTestingModule({

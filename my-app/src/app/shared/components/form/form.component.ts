@@ -8,7 +8,7 @@ import { Item } from '../../interfaces/item';
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class FormComponent implements OnInit {

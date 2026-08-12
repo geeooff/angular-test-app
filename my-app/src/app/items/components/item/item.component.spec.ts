@@ -2,13 +2,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { NEVER } from 'rxjs';
-import { CollectionService } from 'src/app/core/services/collection.service';
-import { State } from 'src/app/shared/enums/state.enum';
+import { CollectionService } from '../../../core/services/collection.service';
+import { State } from '../../../shared/enums/state.enum';
 import { ItemComponent } from './item.component';
 
 @Pipe({ name: 'super' })
 class SuperPipeMock implements PipeTransform {
-  transform(value: any): any {
+  transform<T>(value: T): T {
     return value;
   }
 }

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NEVER } from 'rxjs';
 
-import { CollectionService } from 'src/app/core/services/collection.service';
+import { CollectionService } from '../../../core/services/collection.service';
 import { AddItemComponent } from './add-item.component';
 
 describe('AddItemComponent', () => {
