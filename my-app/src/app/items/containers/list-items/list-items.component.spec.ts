@@ -5,7 +5,10 @@ import { CollectionService } from 'src/app/core/services/collection.service';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { ListItemsComponent } from './list-items.component';
 
-@Pipe({ name: 'filter' })
+@Pipe({
+    name: 'filter',
+    standalone: false
+})
 class FilterPipeMock implements PipeTransform {
   transform(value: any): any {
     return value;

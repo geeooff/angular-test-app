@@ -4,9 +4,10 @@ import { State } from '../../../shared/enums/state.enum';
 import { Item } from '../../interfaces/item';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.css'],
+    standalone: false
 })
 export class FormComponent implements OnInit {
   @Input() editItem?: Item;

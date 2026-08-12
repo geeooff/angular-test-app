@@ -4,9 +4,10 @@ import { CollectionService } from '../../../core/services/collection.service';
 import { Item } from '../../../shared/interfaces/item';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+    selector: 'app-edit',
+    templateUrl: './edit.component.html',
+    styleUrls: ['./edit.component.css'],
+    standalone: false
 })
 export class EditComponent implements OnInit {
   public item?: Item;

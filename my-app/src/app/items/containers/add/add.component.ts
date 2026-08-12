@@ -5,9 +5,10 @@ import { State } from '../../../shared/enums/state.enum';
 import { Item, NewItem } from '../../../shared/interfaces/item';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+    selector: 'app-add',
+    templateUrl: './add.component.html',
+    styleUrls: ['./add.component.css'],
+    standalone: false
 })
 export class AddComponent {
   public intitules = Object.values(State);

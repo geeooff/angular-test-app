@@ -5,7 +5,10 @@ import { CollectionService } from 'src/app/core/services/collection.service';
 import { State } from 'src/app/shared/enums/state.enum';
 import { ItemComponent } from './item.component';
 
-@Pipe({ name: 'super' })
+@Pipe({
+    name: 'super',
+    standalone: false
+})
 class SuperPipeMock implements PipeTransform {
   transform(value: any): any {
     return value;
