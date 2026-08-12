@@ -2,17 +2,23 @@
 
   <div class="my-2">
     <input formControlName="name" type="text" class="form-control" placeholder="Nom et prénom">
-    <div class="alert alert-danger" *ngIf="isError('name')">Champ invalide</div>
+    @if (isError('name')) {
+      <div class="alert alert-danger">Champ invalide</div>
+    }
   </div>
 
   <div class="my-2">
     <input formControlName="reference" type="text" class="form-control" placeholder="Référence">
-    <div class="alert alert-danger" *ngIf="isError('reference')">Champ invalide</div>
+    @if (isError('reference')) {
+      <div class="alert alert-danger">Champ invalide</div>
+    }
   </div>
 
   <div class="my-2">
     <select formControlName="state" class="form-control">
-      <option *ngFor="let intitule of intitules" [ngValue]="intitule">{{ intitule }}</option>
+      @for (intitule of intitules; track intitule) {
+        <option [ngValue]="intitule">{{ intitule }}</option>
+      }
     </select>
   </div>
 

@@ -2,13 +2,13 @@ import { Component, OnInit, Output, EventEmitter, Input, inject } from '@angular
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { State } from '../../../shared/enums/state.enum';
 import { Item } from '../../interfaces/item';
-import { NgIf, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.css'],
-    imports: [FormsModule, ReactiveFormsModule, NgIf, NgFor]
+    imports: [FormsModule, ReactiveFormsModule]
 })
 export class FormComponent implements OnInit {
   private fb = inject(UntypedFormBuilder);

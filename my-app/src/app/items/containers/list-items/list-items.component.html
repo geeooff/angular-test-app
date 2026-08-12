@@ -1,6 +1,6 @@
 <div class="container">
   <input type="text" #search (keyup)="0">
-  <ng-container *ngFor="let cmd of collection | async | filter:search.value">
+  @for (cmd of collection | async | filter:search.value; track cmd) {
     <app-item [item]="cmd"></app-item>
-  </ng-container>
+  }
 </div>

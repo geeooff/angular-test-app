@@ -4,13 +4,13 @@ import { CollectionService } from '../../../core/services/collection.service';
 import { State } from '../../../shared/enums/state.enum';
 import { Item, NewItem } from '../../../shared/interfaces/item';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-add',
     templateUrl: './add.component.html',
     styleUrls: ['./add.component.css'],
-    imports: [FormsModule, NgIf, NgFor]
+    imports: [FormsModule]
 })
 export class AddComponent {
   private router = inject(Router);
