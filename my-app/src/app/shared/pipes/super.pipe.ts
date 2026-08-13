@@ -4,9 +4,7 @@ import { State } from '../enums/state.enum';
 @Pipe({ name: 'super' })
 export class SuperPipe implements PipeTransform {
 
-  transform(reference: string, state: State): any {
-    let prefix: string;
-
+  transform(reference: string, state: State): string {
     // NOTE (GV) static prefix
     // switch (state) {
     //   case State.ALIVRER:
@@ -24,7 +22,7 @@ export class SuperPipe implements PipeTransform {
     // }
 
     // NOTE (GV) dynamic prefix
-    prefix = state
+    const prefix = state
       .toUpperCase()
       .replace(' ', '')
       .substr(0, 2);

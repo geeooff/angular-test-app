@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { Observable, of, pipe } from 'rxjs';
-import { take, tap } from 'rxjs/operators';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Item } from '../../shared/interfaces/item';
 import { CollectionService } from './collection.service';
 
@@ -13,7 +13,7 @@ export class ItemDetailResolverService  {
   private collectionService = inject(CollectionService);
 
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Item | undefined> {
+  resolve(route: ActivatedRouteSnapshot): Observable<Item | undefined> {
     const idValue = route.paramMap.get('id');
 
     if (idValue === null) {
