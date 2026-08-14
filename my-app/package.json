@@ -40,7 +40,7 @@
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^10.0.1",
     "@types/jasmine": "~4.6.5",
-    "@types/node": "^22.15.30",
+    "@types/node": "^26.2.0",
     "angular-eslint": "22.1.0",
     "cypress": "^15.20.1",
     "eslint": "^10.3.0",
